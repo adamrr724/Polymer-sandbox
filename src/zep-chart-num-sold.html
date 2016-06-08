@@ -1,8 +1,7 @@
 <link rel="import" href="../bower_components/polymer/polymer.html">
 <link rel="import" href="../bower_components/google-chart/google-chart.html">
-<link rel="import" href="zep-chart-num-sold.html">
 
-<dom-module id="my-graph-lab">
+<dom-module id="zep-chart-num-sold">
 
     <!-- Defines the element's style and local DOM -->
     <template>
@@ -11,19 +10,15 @@
                 display: block;
                 padding: 16px;
             }
-            google-map {
-                height: 400px;
-            }
         </style>
         <div class="card">
-            <h1>Graph Lab</h1>
+            <h1>Zeppidy Number Sold Graph</h1>
             <google-chart
-                    type='pie'
-                    options='{"title": "Distribution of days in 2001Q1"}'
-                    cols='[{"label":"Month", "type":"string"}, {"label":"Days", "type":"number"}]'
-                    rows='[["Jan", 31],["Feb", 28],["Mar", 31]]'>
+                    type='combo'
+                    options='{"seriesType": "bars", "series":{"2":{"type": "line"}}}'
+                    data= '[["Day", "A", "B", "C"],
+                           ["Mon", 20, 45, 28]]'>
             </google-chart>
-            <zep-chart-num-sold></zep-chart-num-sold>
 
         </div>
     </template>
@@ -31,7 +26,7 @@
     <!-- Creates the element's prototype and registers it -->
     <script>
         Polymer({
-            is: 'my-graph-lab',
+            is: 'zep-chart-num-sold',
             properties: {
                 route: Object
             }
